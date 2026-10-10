@@ -286,6 +286,9 @@ def place_order():
     size_name = "Small Pizza"
     base_price = 15
 
+    if size not in ("S", "M", "L"):
+        size = "S"  # FIX: unknown size silently billed $0 before
+
     if size == "S":
         bill += 15
         base_price = 15
